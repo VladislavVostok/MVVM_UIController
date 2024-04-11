@@ -1,0 +1,1271 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Portable.System.DateTimeOnly</name>
+    </assembly>
+    <members>
+        <member name="T:System.DateOnly">
+            <summary>
+            Represents dates with values ranging from January 1, 0001 Anno Domini (Common Era) through December 31, 9999 A.D. (C.E.) in the Gregorian calendar.
+            </summary>
+        </member>
+        <member name="P:System.DateOnly.MinValue">
+            <summary>
+            Gets the earliest possible date that can be created.
+            </summary>
+        </member>
+        <member name="P:System.DateOnly.MaxValue">
+            <summary>
+            Gets the latest possible date that can be created.
+            </summary>
+        </member>
+        <member name="M:System.DateOnly.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a new instance of the DateOnly structure to the specified year, month, and day.
+            </summary>
+            <param name="year">The year (1 through 9999).</param>
+            <param name="month">The month (1 through 12).</param>
+            <param name="day">The day (1 through the number of days in <paramref name="month" />).</param>
+        </member>
+        <member name="M:System.DateOnly.#ctor(System.Int32,System.Int32,System.Int32,System.Globalization.Calendar)">
+            <summary>
+            Creates a new instance of the DateOnly structure to the specified year, month, and day for the specified calendar.
+            </summary>
+            <param name="year">The year (1 through the number of years in calendar).</param>
+            <param name="month">The month (1 through the number of months in calendar).</param>
+            <param name="day">The day (1 through the number of days in <paramref name="month"/>).</param>
+            <param name="calendar">The calendar that is used to interpret year, month, and day.<paramref name="month"/>.</param>
+        </member>
+        <member name="M:System.DateOnly.FromDayNumber(System.Int32)">
+            <summary>
+            Creates a new instance of the DateOnly structure to the specified number of days.
+            </summary>
+            <param name="dayNumber">The number of days since January 1, 0001 in the Proleptic Gregorian calendar.</param>
+        </member>
+        <member name="P:System.DateOnly.Year">
+            <summary>
+            Gets the year component of the date represented by this instance.
+            </summary>
+        </member>
+        <member name="P:System.DateOnly.Month">
+            <summary>
+            Gets the month component of the date represented by this instance.
+            </summary>
+        </member>
+        <member name="P:System.DateOnly.Day">
+            <summary>
+            Gets the day component of the date represented by this instance.
+            </summary>
+        </member>
+        <member name="P:System.DateOnly.DayOfWeek">
+            <summary>
+            Gets the day of the week represented by this instance.
+            </summary>
+        </member>
+        <member name="P:System.DateOnly.DayOfYear">
+            <summary>
+            Gets the day of the year represented by this instance.
+            </summary>
+        </member>
+        <member name="P:System.DateOnly.DayNumber">
+            <summary>
+            Gets the number of days since January 1, 0001 in the Proleptic Gregorian calendar represented by this instance.
+            </summary>
+        </member>
+        <member name="M:System.DateOnly.AddDays(System.Int32)">
+            <summary>
+            Adds the specified number of days to the value of this instance.
+            </summary>
+            <param name="value">The number of days to add. To subtract days, specify a negative number.</param>
+            <returns>An instance whose value is the sum of the date represented by this instance and the number of days represented by value.</returns>
+        </member>
+        <member name="M:System.DateOnly.AddMonths(System.Int32)">
+            <summary>
+            Adds the specified number of months to the value of this instance.
+            </summary>
+            <param name="value">A number of months. The months parameter can be negative or positive.</param>
+            <returns>An object whose value is the sum of the date represented by this instance and months.</returns>
+        </member>
+        <member name="M:System.DateOnly.AddYears(System.Int32)">
+            <summary>
+            Adds the specified number of years to the value of this instance.
+            </summary>
+            <param name="value">A number of years. The value parameter can be negative or positive.</param>
+            <returns>An object whose value is the sum of the date represented by this instance and the number of years represented by value.</returns>
+        </member>
+        <member name="M:System.DateOnly.op_Equality(System.DateOnly,System.DateOnly)">
+            <summary>
+            Determines whether two specified instances of DateOnly are equal.
+            </summary>
+            <param name="left">The first object to compare.</param>
+            <param name="right">The second object to compare.</param>
+            <returns>true if left and right represent the same date; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.op_Inequality(System.DateOnly,System.DateOnly)">
+            <summary>
+            Determines whether two specified instances of DateOnly are not equal.
+            </summary>
+            <param name="left">The first object to compare.</param>
+            <param name="right">The second object to compare.</param>
+            <returns>true if left and right do not represent the same date; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.op_GreaterThan(System.DateOnly,System.DateOnly)">
+            <summary>
+            Determines whether one specified DateOnly is later than another specified DateTime.
+            </summary>
+            <param name="left">The first object to compare.</param>
+            <param name="right">The second object to compare.</param>
+            <returns>true if left is later than right; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.op_GreaterThanOrEqual(System.DateOnly,System.DateOnly)">
+            <summary>
+            Determines whether one specified DateOnly represents a date that is the same as or later than another specified DateOnly.
+            </summary>
+            <param name="left">The first object to compare.</param>
+            <param name="right">The second object to compare.</param>
+            <returns>true if left is the same as or later than right; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.op_LessThan(System.DateOnly,System.DateOnly)">
+            <summary>
+            Determines whether one specified DateOnly is earlier than another specified DateOnly.
+            </summary>
+            <param name="left">The first object to compare.</param>
+            <param name="right">The second object to compare.</param>
+            <returns>true if left is earlier than right; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.op_LessThanOrEqual(System.DateOnly,System.DateOnly)">
+            <summary>
+            Determines whether one specified DateOnly represents a date that is the same as or earlier than another specified DateOnly.
+            </summary>
+            <param name="left">The first object to compare.</param>
+            <param name="right">The second object to compare.</param>
+            <returns>true if left is the same as or earlier than right; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.Deconstruct(System.Int32@,System.Int32@,System.Int32@)">
+            <summary>
+            Deconstructs <see cref="T:System.DateOnly"/> by <see cref="P:System.DateOnly.Year"/>, <see cref="P:System.DateOnly.Month"/> and <see cref="P:System.DateOnly.Day"/>.
+            </summary>
+            <param name="year">
+            Deconstructed parameter for <see cref="P:System.DateOnly.Year"/>.
+            </param>
+            <param name="month">
+            Deconstructed parameter for <see cref="P:System.DateOnly.Month"/>.
+            </param>
+            <param name="day">
+            Deconstructed parameter for <see cref="P:System.DateOnly.Day"/>.
+            </param>
+        </member>
+        <member name="M:System.DateOnly.ToDateTime(System.TimeOnly)">
+            <summary>
+            Returns a DateTime that is set to the date of this DateOnly instance and the time of specified input time.
+            </summary>
+            <param name="time">The time of the day.</param>
+            <returns>The DateTime instance composed of the date of the current DateOnly instance and the time specified by the input time.</returns>
+        </member>
+        <member name="M:System.DateOnly.ToDateTime(System.TimeOnly,System.DateTimeKind)">
+            <summary>
+            Returns a DateTime instance with the specified input kind that is set to the date of this DateOnly instance and the time of specified input time.
+            </summary>
+            <param name="time">The time of the day.</param>
+            <param name="kind">One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.</param>
+            <returns>The DateTime instance composed of the date of the current DateOnly instance and the time specified by the input time.</returns>
+        </member>
+        <member name="M:System.DateOnly.FromDateTime(System.DateTime)">
+            <summary>
+            Returns a DateOnly instance that is set to the date part of the specified dateTime.
+            </summary>
+            <param name="dateTime">The DateTime instance.</param>
+            <returns>The DateOnly instance composed of the date part of the specified input time dateTime instance.</returns>
+        </member>
+        <member name="M:System.DateOnly.CompareTo(System.DateOnly)">
+            <summary>
+            Compares the value of this instance to a specified DateOnly value and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.
+            </summary>
+            <param name="value">The object to compare to the current instance.</param>
+            <returns>Less than zero if this instance is earlier than value. Greater than zero if this instance is later than value. Zero if this instance is the same as value.</returns>
+        </member>
+        <member name="M:System.DateOnly.CompareTo(System.Object)">
+            <summary>
+            Compares the value of this instance to a specified object that contains a specified DateOnly value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateOnly value.
+            </summary>
+            <param name="value">A boxed object to compare, or null.</param>
+            <returns>Less than zero if this instance is earlier than value. Greater than zero if this instance is later than value. Zero if this instance is the same as value.</returns>
+        </member>
+        <member name="M:System.DateOnly.Equals(System.DateOnly)">
+            <summary>
+            Returns a value indicating whether the value of this instance is equal to the value of the specified DateOnly instance.
+            </summary>
+            <param name="value">The object to compare to this instance.</param>
+            <returns>true if the value parameter equals the value of this instance; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance is equal to a specified object.
+            </summary>
+            <param name="value">The object to compare to this instance.</param>
+            <returns>true if value is an instance of DateOnly and equals the value of this instance; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
+        <member name="M:System.DateOnly.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts a memory span that contains string representation of a date to its DateOnly equivalent by using culture-specific format information and a formatting style.
+            </summary>
+            <param name="s">The memory span that contains the string to parse.</param>
+            <param name="provider">An object that supplies culture-specific format information about s.</param>
+            <param name="style">A bitwise combination of enumeration values that indicates the permitted format of s. A typical value to specify is None.</param>
+            <returns>An object that is equivalent to the date contained in s, as specified by provider and styles.</returns>
+        </member>
+        <member name="M:System.DateOnly.ParseExact(System.ReadOnlySpan{System.Char},System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts the specified span representation of a date to its DateOnly equivalent using the specified format, culture-specific format information, and style.
+            The format of the string representation must match the specified format exactly or an exception is thrown.
+            </summary>
+            <param name="s">A span containing the characters that represent a date to convert.</param>
+            <param name="format">A span containing the characters that represent a format specifier that defines the required format of s.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of enumeration values that indicates the permitted format of s. A typical value to specify is None.</param>
+            <returns>An object that is equivalent to the date contained in s, as specified by format, provider, and style.</returns>
+        </member>
+        <member name="M:System.DateOnly.ParseExact(System.ReadOnlySpan{System.Char},System.String[])">
+            <summary>
+            Converts the specified span representation of a date to its DateOnly equivalent using the specified array of formats.
+            The format of the string representation must match at least one of the specified formats exactly or an exception is thrown.
+            </summary>
+            <param name="s">A span containing the characters that represent a date to convert.</param>
+            <param name="formats">An array of allowable formats of s.</param>
+            <returns>An object that is equivalent to the date contained in s, as specified by format, provider, and style.</returns>
+        </member>
+        <member name="M:System.DateOnly.ParseExact(System.ReadOnlySpan{System.Char},System.String[],System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts the specified span representation of a date to its DateOnly equivalent using the specified array of formats, culture-specific format information, and style.
+            The format of the string representation must match at least one of the specified formats exactly or an exception is thrown.
+            </summary>
+            <param name="s">A span containing the characters that represent a date to convert.</param>
+            <param name="formats">An array of allowable formats of s.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of enumeration values that indicates the permitted format of s. A typical value to specify is None.</param>
+            <returns>An object that is equivalent to the date contained in s, as specified by format, provider, and style.</returns>
+        </member>
+        <member name="M:System.DateOnly.Parse(System.String)">
+            <summary>
+            Converts a string that contains string representation of a date to its DateOnly equivalent by using the conventions of the current culture.
+            </summary>
+            <param name="s">The string that contains the string to parse.</param>
+            <returns>An object that is equivalent to the date contained in s.</returns>
+        </member>
+        <member name="M:System.DateOnly.Parse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts a string that contains string representation of a date to its DateOnly equivalent by using culture-specific format information and a formatting style.
+            </summary>
+            <param name="s">The string that contains the string to parse.</param>
+            <param name="provider">An object that supplies culture-specific format information about s.</param>
+            <param name="style">A bitwise combination of the enumeration values that indicates the style elements that can be present in s for the parse operation to succeed, and that defines how to interpret the parsed date. A typical value to specify is None.</param>
+            <returns>An object that is equivalent to the date contained in s, as specified by provider and styles.</returns>
+        </member>
+        <member name="M:System.DateOnly.ParseExact(System.String,System.String)">
+            <summary>
+            Converts the specified string representation of a date to its DateOnly equivalent using the specified format.
+            The format of the string representation must match the specified format exactly or an exception is thrown.
+            </summary>
+            <param name="s">A string containing the characters that represent a date to convert.</param>
+            <param name="format">A string that represent a format specifier that defines the required format of s.</param>
+            <returns>An object that is equivalent to the date contained in s, as specified by format.</returns>
+        </member>
+        <member name="M:System.DateOnly.ParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts the specified string representation of a date to its DateOnly equivalent using the specified format, culture-specific format information, and style.
+            The format of the string representation must match the specified format exactly or an exception is thrown.
+            </summary>
+            <param name="s">A string containing the characters that represent a date to convert.</param>
+            <param name="format">A string containing the characters that represent a format specifier that defines the required format of s.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of the enumeration values that provides additional information about s, about style elements that may be present in s, or about the conversion from s to a DateOnly value. A typical value to specify is None.</param>
+            <returns>An object that is equivalent to the date contained in s, as specified by format, provider, and style.</returns>
+        </member>
+        <member name="M:System.DateOnly.ParseExact(System.String,System.String[])">
+            <summary>
+            Converts the specified span representation of a date to its DateOnly equivalent using the specified array of formats.
+            The format of the string representation must match at least one of the specified formats exactly or an exception is thrown.
+            </summary>
+            <param name="s">A span containing the characters that represent a date to convert.</param>
+            <param name="formats">An array of allowable formats of s.</param>
+            <returns>An object that is equivalent to the date contained in s, as specified by format, provider, and style.</returns>
+        </member>
+        <member name="M:System.DateOnly.ParseExact(System.String,System.String[],System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts the specified string representation of a date to its DateOnly equivalent using the specified array of formats, culture-specific format information, and style.
+            The format of the string representation must match at least one of the specified formats exactly or an exception is thrown.
+            </summary>
+            <param name="s">A string containing the characters that represent a date to convert.</param>
+            <param name="formats">An array of allowable formats of s.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of enumeration values that indicates the permitted format of s. A typical value to specify is None.</param>
+            <returns>An object that is equivalent to the date contained in s, as specified by format, provider, and style.</returns>
+        </member>
+        <member name="M:System.DateOnly.TryParse(System.ReadOnlySpan{System.Char},System.DateOnly@)">
+            <summary>
+            Converts the specified span representation of a date to its DateOnly equivalent and returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">A span containing the characters representing the date to convert.</param>
+            <param name="result">When this method returns, contains the DateOnly value equivalent to the date contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s parameter is empty string, or does not contain a valid string representation of a date. This parameter is passed uninitialized.</param>
+            <returns>true if the s parameter was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateOnly@)">
+            <summary>
+            Converts the specified span representation of a date to its DateOnly equivalent using the specified array of formats, culture-specific format information, and style. And returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">A string containing the characters that represent a date to convert.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of enumeration values that indicates the permitted format of s. A typical value to specify is None.</param>
+            <param name="result">When this method returns, contains the DateOnly value equivalent to the date contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s parameter is empty string, or does not contain a valid string representation of a date. This parameter is passed uninitialized.</param>
+            <returns>true if the s parameter was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.TryParseExact(System.ReadOnlySpan{System.Char},System.ReadOnlySpan{System.Char},System.DateOnly@)">
+            <summary>
+            Converts the specified span representation of a date to its DateOnly equivalent using the specified format and style.
+            The format of the string representation must match the specified format exactly. The method returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">A span containing the characters representing a date to convert.</param>
+            <param name="format">The required format of s.</param>
+            <param name="result">When this method returns, contains the DateOnly value equivalent to the date contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s is empty string, or does not contain a date that correspond to the pattern specified in format. This parameter is passed uninitialized.</param>
+            <returns>true if s was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.TryParseExact(System.ReadOnlySpan{System.Char},System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateOnly@)">
+            <summary>
+            Converts the specified span representation of a date to its DateOnly equivalent using the specified format, culture-specific format information, and style.
+            The format of the string representation must match the specified format exactly. The method returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">A span containing the characters representing a date to convert.</param>
+            <param name="format">The required format of s.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of one or more enumeration values that indicate the permitted format of s.</param>
+            <param name="result">When this method returns, contains the DateOnly value equivalent to the date contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s is empty string, or does not contain a date that correspond to the pattern specified in format. This parameter is passed uninitialized.</param>
+            <returns>true if s was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.TryParseExact(System.ReadOnlySpan{System.Char},System.String[],System.DateOnly@)">
+            <summary>
+            Converts the specified char span of a date to its DateOnly equivalent and returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">The span containing the string to parse.</param>
+            <param name="formats">An array of allowable formats of s.</param>
+            <param name="result">When this method returns, contains the DateOnly value equivalent to the date contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s parameter is Empty, or does not contain a valid string representation of a date. This parameter is passed uninitialized.</param>
+            <returns>true if the s parameter was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.TryParseExact(System.ReadOnlySpan{System.Char},System.String[],System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateOnly@)">
+            <summary>
+            Converts the specified char span of a date to its DateOnly equivalent and returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">The span containing the string to parse.</param>
+            <param name="formats">An array of allowable formats of s.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of enumeration values that defines how to interpret the parsed date. A typical value to specify is None.</param>
+            <param name="result">When this method returns, contains the DateOnly value equivalent to the date contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s parameter is Empty, or does not contain a valid string representation of a date. This parameter is passed uninitialized.</param>
+            <returns>true if the s parameter was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.TryParse(System.String,System.DateOnly@)">
+            <summary>
+            Converts the specified string representation of a date to its DateOnly equivalent and returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">A string containing the characters representing the date to convert.</param>
+            <param name="result">When this method returns, contains the DateOnly value equivalent to the date contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s parameter is empty string, or does not contain a valid string representation of a date. This parameter is passed uninitialized.</param>
+            <returns>true if the s parameter was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.TryParse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateOnly@)">
+            <summary>
+            Converts the specified string representation of a date to its DateOnly equivalent using the specified array of formats, culture-specific format information, and style. And returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">A string containing the characters that represent a date to convert.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of enumeration values that indicates the permitted format of s. A typical value to specify is None.</param>
+            <param name="result">When this method returns, contains the DateOnly value equivalent to the date contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s parameter is empty string, or does not contain a valid string representation of a date. This parameter is passed uninitialized.</param>
+            <returns>true if the s parameter was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.TryParseExact(System.String,System.String,System.DateOnly@)">
+            <summary>
+            Converts the specified string representation of a date to its DateOnly equivalent using the specified format and style.
+            The format of the string representation must match the specified format exactly. The method returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">A string containing the characters representing a date to convert.</param>
+            <param name="format">The required format of s.</param>
+            <param name="result">When this method returns, contains the DateOnly value equivalent to the date contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s is empty string, or does not contain a date that correspond to the pattern specified in format. This parameter is passed uninitialized.</param>
+            <returns>true if s was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateOnly@)">
+            <summary>
+            Converts the specified span representation of a date to its DateOnly equivalent using the specified format, culture-specific format information, and style.
+            The format of the string representation must match the specified format exactly. The method returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">A span containing the characters representing a date to convert.</param>
+            <param name="format">The required format of s.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of one or more enumeration values that indicate the permitted format of s.</param>
+            <param name="result">When this method returns, contains the DateOnly value equivalent to the date contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s is empty string, or does not contain a date that correspond to the pattern specified in format. This parameter is passed uninitialized.</param>
+            <returns>true if s was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.TryParseExact(System.String,System.String[],System.DateOnly@)">
+            <summary>
+            Converts the specified string of a date to its DateOnly equivalent and returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">The string containing date to parse.</param>
+            <param name="formats">An array of allowable formats of s.</param>
+            <param name="result">When this method returns, contains the DateOnly value equivalent to the date contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s parameter is Empty, or does not contain a valid string representation of a date. This parameter is passed uninitialized.</param>
+            <returns>true if the s parameter was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.TryParseExact(System.String,System.String[],System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateOnly@)">
+            <summary>
+            Converts the specified string of a date to its DateOnly equivalent and returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">The string containing the date to parse.</param>
+            <param name="formats">An array of allowable formats of s.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of enumeration values that defines how to interpret the parsed date. A typical value to specify is None.</param>
+            <param name="result">When this method returns, contains the DateOnly value equivalent to the date contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s parameter is Empty, or does not contain a valid string representation of a date. This parameter is passed uninitialized.</param>
+            <returns>true if the s parameter was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.ToLongDateString">
+            <summary>
+            Converts the value of the current DateOnly object to its equivalent long date string representation.
+            </summary>
+            <returns>A string that contains the long date string representation of the current DateOnly object.</returns>
+        </member>
+        <member name="M:System.DateOnly.ToShortDateString">
+            <summary>
+            Converts the value of the current DateOnly object to its equivalent short date string representation.
+            </summary>
+            <returns>A string that contains the short date string representation of the current DateOnly object.</returns>
+        </member>
+        <member name="M:System.DateOnly.ToString">
+            <summary>
+            Converts the value of the current DateOnly object to its equivalent string representation using the formatting conventions of the current culture.
+            The DateOnly object will be formatted in short form.
+            </summary>
+            <returns>A string that contains the short date string representation of the current DateOnly object.</returns>
+        </member>
+        <member name="M:System.DateOnly.ToString(System.String)">
+            <summary>
+            Converts the value of the current DateOnly object to its equivalent string representation using the specified format and the formatting conventions of the current culture.
+            </summary>
+            <param name="format">A standard or custom date format string.</param>
+            <returns>A string representation of value of the current DateOnly object as specified by format.</returns>
+        </member>
+        <member name="M:System.DateOnly.ToString(System.IFormatProvider)">
+            <summary>
+            Converts the value of the current DateOnly object to its equivalent string representation using the specified culture-specific format information.
+            </summary>
+            <param name="provider">An object that supplies culture-specific formatting information.</param>
+            <returns>A string representation of value of the current DateOnly object as specified by provider.</returns>
+        </member>
+        <member name="M:System.DateOnly.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts the value of the current DateOnly object to its equivalent string representation using the specified culture-specific format information.
+            </summary>
+            <param name="format">A standard or custom date format string.</param>
+            <param name="provider">An object that supplies culture-specific formatting information.</param>
+            <returns>A string representation of value of the current DateOnly object as specified by format and provider.</returns>
+        </member>
+        <member name="M:System.DateOnly.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <summary>
+            Tries to format the value of the current DateOnly instance into the provided span of characters.
+            </summary>
+            <param name="destination">When this method returns, this instance's value formatted as a span of characters.</param>
+            <param name="charsWritten">When this method returns, the number of characters that were written in destination.</param>
+            <param name="format">A span containing the characters that represent a standard or custom format string that defines the acceptable format for destination.</param>
+            <param name="provider">An optional object that supplies culture-specific formatting information for destination.</param>
+            <returns>true if the formatting was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:System.DateOnly.Parse(System.String,System.IFormatProvider)">
+            <inheritdoc cref="M:System.IParsable`1.Parse(System.String,System.IFormatProvider)" />
+        </member>
+        <member name="M:System.DateOnly.TryParse(System.String,System.IFormatProvider,System.DateOnly@)">
+            <inheritdoc cref="M:System.IParsable`1.TryParse(System.String,System.IFormatProvider,`0@)" />
+        </member>
+        <member name="M:System.DateOnly.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref="M:System.ISpanParsable`1.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)" />
+        </member>
+        <member name="M:System.DateOnly.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.DateOnly@)">
+            <inheritdoc cref="M:System.ISpanParsable`1.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,`0@)" />
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute">
+            <summary>Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue"/>, the parameter may be null even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified return value condition.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter may be null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute">
+            <summary>Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue"/>, the parameter will not be null even if the corresponding type allows it.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified return value condition.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter will not be null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute">
+            <summary>Applied to a method that will never return under any circumstance.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute">
+            <summary>Specifies the syntax used in a string.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.#ctor(System.String)">
+            <summary>Initializes the <see cref="T:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute"/> with the identifier of the syntax used.</summary>
+            <param name="syntax">The syntax identifier.</param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.Syntax">
+            <summary>Gets the identifier of the syntax used.</summary>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.Arguments">
+            <summary>Optional arguments associated with the specific syntax employed.</summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.DateOnlyFormat">
+            <summary>The syntax identifier for strings containing date format specifiers.</summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.TimeOnlyFormat">
+            <summary>The syntax identifier for strings containing time format specifiers.</summary>
+        </member>
+        <member name="M:System.DateTimeFormat.WriteTwoDecimalDigits(System.UInt32,System.Span{System.Char},System.Int32)">
+            <summary>
+            Writes a value [ 00 .. 99 ] to the buffer starting at the specified offset.
+            This method performs best when the starting index is a constant literal.
+            </summary>
+        </member>
+        <member name="M:System.DateTimeFormat.WriteFourDecimalDigits(System.UInt32,System.Span{System.Char},System.Int32)">
+            <summary>
+            Writes a value [ 0000 .. 9999 ] to the buffer starting at the specified offset.
+            This method performs best when the starting index is a constant literal.
+            </summary>
+        </member>
+        <member name="T:System.ISpanFormattable">
+            <summary>Provides functionality to format the string representation of an object into a span.</summary>
+        </member>
+        <member name="M:System.ISpanFormattable.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <summary>Tries to format the value of the current instance into the provided span of characters.</summary>
+            <param name="destination">When this method returns, this instance's value formatted as a span of characters.</param>
+            <param name="charsWritten">When this method returns, the number of characters that were written in <paramref name="destination"/>.</param>
+            <param name="format">A span containing the characters that represent a standard or custom format string that defines the acceptable format for <paramref name="destination"/>.</param>
+            <param name="provider">An optional object that supplies culture-specific formatting information for <paramref name="destination"/>.</param>
+            <returns><see langword="true"/> if the formatting was successful; otherwise, <see langword="false"/>.</returns>
+            <remarks>
+            An implementation of this interface should produce the same string of characters as an implementation of <see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)"/>
+            on the same type.
+            TryFormat should return <see langword="false"/> only if there is not enough space in the destination buffer. Any other failures should throw an exception.
+            </remarks>
+        </member>
+        <member name="T:System.Resources.Strings">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:System.Resources.Strings.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:System.Resources.Strings.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:System.Resources.Strings.Arg_MustBeDateOnly">
+            <summary>
+              Looks up a localized string similar to Object must be of type DateOnly..
+            </summary>
+        </member>
+        <member name="P:System.Resources.Strings.Arg_MustBeTimeOnly">
+            <summary>
+              Looks up a localized string similar to Object must be of type TimeOnly..
+            </summary>
+        </member>
+        <member name="P:System.Resources.Strings.Argument_BadFormatSpecifier">
+            <summary>
+              Looks up a localized string similar to Format specifier was invalid..
+            </summary>
+        </member>
+        <member name="P:System.Resources.Strings.Argument_InvalidDateStyles">
+            <summary>
+              Looks up a localized string similar to The only allowed values for the styles are AllowWhiteSpaces, AllowTrailingWhite, AllowLeadingWhite, and AllowInnerWhite..
+            </summary>
+        </member>
+        <member name="P:System.Resources.Strings.ArgumentOutOfRange_AddValue">
+            <summary>
+              Looks up a localized string similar to Value to add was out of range..
+            </summary>
+        </member>
+        <member name="P:System.Resources.Strings.ArgumentOutOfRange_BadHourMinuteSecond">
+            <summary>
+              Looks up a localized string similar to Hour, Minute, and Second parameters describe an un-representable DateTime..
+            </summary>
+        </member>
+        <member name="P:System.Resources.Strings.ArgumentOutOfRange_DayNumber">
+            <summary>
+              Looks up a localized string similar to Day number must be between 0 and DateOnly.MaxValue.DayNumber..
+            </summary>
+        </member>
+        <member name="P:System.Resources.Strings.ArgumentOutOfRange_Range">
+            <summary>
+              Looks up a localized string similar to Valid values are between {0} and {1}, inclusive..
+            </summary>
+        </member>
+        <member name="P:System.Resources.Strings.ArgumentOutOfRange_TimeOnlyBadTicks">
+            <summary>
+              Looks up a localized string similar to Ticks must be between 0 and and TimeOnly.MaxValue.Ticks..
+            </summary>
+        </member>
+        <member name="P:System.Resources.Strings.Format_BadDateOnly">
+            <summary>
+              Looks up a localized string similar to String &apos;{0}&apos; was not recognized as a valid DateOnly..
+            </summary>
+        </member>
+        <member name="P:System.Resources.Strings.Format_BadQuote">
+            <summary>
+              Looks up a localized string similar to Cannot find a matching quote character for the character &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:System.Resources.Strings.Format_BadTimeOnly">
+            <summary>
+              Looks up a localized string similar to String &apos;{0}&apos; was not recognized as a valid TimeOnly..
+            </summary>
+        </member>
+        <member name="P:System.Resources.Strings.Format_DateTimeOnlyContainsNoneDateParts">
+            <summary>
+              Looks up a localized string similar to String &apos;{0}&apos; contains parts which are not specific to the {1}..
+            </summary>
+        </member>
+        <member name="P:System.Resources.Strings.Format_InvalidString">
+            <summary>
+              Looks up a localized string similar to Input string was not in a correct format..
+            </summary>
+        </member>
+        <member name="T:System.TimeOnly">
+            <summary>
+            Represents a time of day, as would be read from a clock, within the range 00:00:00 to 23:59:59.9999999.
+            </summary>
+        </member>
+        <member name="P:System.TimeOnly.MinValue">
+            <summary>
+            Represents the smallest possible value of TimeOnly.
+            </summary>
+        </member>
+        <member name="P:System.TimeOnly.MaxValue">
+            <summary>
+            Represents the largest possible value of TimeOnly.
+            </summary>
+        </member>
+        <member name="M:System.TimeOnly.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the timeOnly structure to the specified hour and the minute.
+            </summary>
+            <param name="hour">The hours (0 through 23).</param>
+            <param name="minute">The minutes (0 through 59).</param>
+        </member>
+        <member name="M:System.TimeOnly.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the timeOnly structure to the specified hour, minute, and second.
+            </summary>
+            <param name="hour">The hours (0 through 23).</param>
+            <param name="minute">The minutes (0 through 59).</param>
+            <param name="second">The seconds (0 through 59).</param>
+        </member>
+        <member name="M:System.TimeOnly.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the timeOnly structure to the specified hour, minute, second, and millisecond.
+            </summary>
+            <param name="hour">The hours (0 through 23).</param>
+            <param name="minute">The minutes (0 through 59).</param>
+            <param name="second">The seconds (0 through 59).</param>
+            <param name="millisecond">The millisecond (0 through 999).</param>
+        </member>
+        <member name="M:System.TimeOnly.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.TimeOnly"/> structure to the specified hour, minute, second, and millisecond.
+            </summary>
+            <param name="hour">The hours (0 through 23).</param>
+            <param name="minute">The minutes (0 through 59).</param>
+            <param name="second">The seconds (0 through 59).</param>
+            <param name="millisecond">The millisecond (0 through 999).</param>
+            <param name="microsecond">The microsecond (0 through 999).</param>
+        </member>
+        <member name="M:System.TimeOnly.#ctor(System.Int64)">
+            <summary>
+            Initializes a new instance of the TimeOnly structure using a specified number of ticks.
+            </summary>
+            <param name="ticks">A time of day expressed in the number of 100-nanosecond units since 00:00:00.0000000.</param>
+        </member>
+        <member name="P:System.TimeOnly.Hour">
+            <summary>
+            Gets the hour component of the time represented by this instance.
+            </summary>
+        </member>
+        <member name="P:System.TimeOnly.Minute">
+            <summary>
+            Gets the minute component of the time represented by this instance.
+            </summary>
+        </member>
+        <member name="P:System.TimeOnly.Second">
+            <summary>
+            Gets the second component of the time represented by this instance.
+            </summary>
+        </member>
+        <member name="P:System.TimeOnly.Millisecond">
+            <summary>
+            Gets the millisecond component of the time represented by this instance.
+            </summary>
+        </member>
+        <member name="P:System.TimeOnly.Microsecond">
+            <summary>
+            Gets the microsecond component of the time represented by this instance.
+            </summary>
+        </member>
+        <member name="P:System.TimeOnly.Nanosecond">
+            <summary>
+            Gets the nanosecond component of the time represented by this instance.
+            </summary>
+        </member>
+        <member name="P:System.TimeOnly.Ticks">
+            <summary>
+            Gets the number of ticks that represent the time of this instance.
+            </summary>
+        </member>
+        <member name="M:System.TimeOnly.Add(System.TimeSpan)">
+            <summary>
+            Returns a new TimeOnly that adds the value of the specified TimeSpan to the value of this instance.
+            </summary>
+            <param name="value">A positive or negative time interval.</param>
+            <returns>An object whose value is the sum of the time represented by this instance and the time interval represented by value.</returns>
+        </member>
+        <member name="M:System.TimeOnly.Add(System.TimeSpan,System.Int32@)">
+            <summary>
+            Returns a new TimeOnly that adds the value of the specified TimeSpan to the value of this instance.
+            If the result wraps past the end of the day, this method will return the number of excess days as an out parameter.
+            </summary>
+            <param name="value">A positive or negative time interval.</param>
+            <param name="wrappedDays">When this method returns, contains the number of excess days if any that resulted from wrapping during this addition operation.</param>
+            <returns>An object whose value is the sum of the time represented by this instance and the time interval represented by value.</returns>
+        </member>
+        <member name="M:System.TimeOnly.AddHours(System.Double)">
+            <summary>
+            Returns a new TimeOnly that adds the specified number of hours to the value of this instance.
+            </summary>
+            <param name="value">A number of whole and fractional hours. The value parameter can be negative or positive.</param>
+            <returns>An object whose value is the sum of the time represented by this instance and the number of hours represented by value.</returns>
+        </member>
+        <member name="M:System.TimeOnly.AddHours(System.Double,System.Int32@)">
+            <summary>
+            Returns a new TimeOnly that adds the specified number of hours to the value of this instance.
+            If the result wraps past the end of the day, this method will return the number of excess days as an out parameter.
+            </summary>
+            <param name="value">A number of whole and fractional hours. The value parameter can be negative or positive.</param>
+            <param name="wrappedDays">When this method returns, contains the number of excess days if any that resulted from wrapping during this addition operation.</param>
+            <returns>An object whose value is the sum of the time represented by this instance and the number of hours represented by value.</returns>
+        </member>
+        <member name="M:System.TimeOnly.AddMinutes(System.Double)">
+            <summary>
+            Returns a new TimeOnly that adds the specified number of minutes to the value of this instance.
+            </summary>
+            <param name="value">A number of whole and fractional minutes. The value parameter can be negative or positive.</param>
+            <returns>An object whose value is the sum of the time represented by this instance and the number of minutes represented by value.</returns>
+        </member>
+        <member name="M:System.TimeOnly.AddMinutes(System.Double,System.Int32@)">
+            <summary>
+            Returns a new TimeOnly that adds the specified number of minutes to the value of this instance.
+            If the result wraps past the end of the day, this method will return the number of excess days as an out parameter.
+            </summary>
+            <param name="value">A number of whole and fractional minutes. The value parameter can be negative or positive.</param>
+            <param name="wrappedDays">When this method returns, contains the number of excess days if any that resulted from wrapping during this addition operation.</param>
+            <returns>An object whose value is the sum of the time represented by this instance and the number of minutes represented by value.</returns>
+        </member>
+        <member name="M:System.TimeOnly.IsBetween(System.TimeOnly,System.TimeOnly)">
+            <summary>
+            Determines if a time falls within the range provided.
+            Supports both "normal" ranges such as 10:00-12:00, and ranges that span midnight such as 23:00-01:00.
+            </summary>
+            <param name="start">The starting time of day, inclusive.</param>
+            <param name="end">The ending time of day, exclusive.</param>
+            <returns>True, if the time falls within the range, false otherwise.</returns>
+            <remarks>
+            If <paramref name="start"/> and <paramref name="end"/> are equal, this method returns false, meaning there is zero elapsed time between the two values.
+            If you wish to treat such cases as representing one or more whole days, then first check for equality before calling this method.
+            </remarks>
+        </member>
+        <member name="M:System.TimeOnly.op_Equality(System.TimeOnly,System.TimeOnly)">
+            <summary>
+            Determines whether two specified instances of TimeOnly are equal.
+            </summary>
+            <param name="left">The first object to compare.</param>
+            <param name="right">The second object to compare.</param>
+            <returns>true if left and right represent the same time; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.op_Inequality(System.TimeOnly,System.TimeOnly)">
+            <summary>
+            Determines whether two specified instances of TimeOnly are not equal.
+            </summary>
+            <param name="left">The first object to compare.</param>
+            <param name="right">The second object to compare.</param>
+            <returns>true if left and right do not represent the same time; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.op_GreaterThan(System.TimeOnly,System.TimeOnly)">
+            <summary>
+            Determines whether one specified TimeOnly is later than another specified TimeOnly.
+            </summary>
+            <param name="left">The first object to compare.</param>
+            <param name="right">The second object to compare.</param>
+            <returns>true if left is later than right; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.op_GreaterThanOrEqual(System.TimeOnly,System.TimeOnly)">
+            <summary>
+            Determines whether one specified TimeOnly represents a time that is the same as or later than another specified TimeOnly.
+            </summary>
+            <param name="left">The first object to compare.</param>
+            <param name="right">The second object to compare.</param>
+            <returns>true if left is the same as or later than right; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.op_LessThan(System.TimeOnly,System.TimeOnly)">
+            <summary>
+            Determines whether one specified TimeOnly is earlier than another specified TimeOnly.
+            </summary>
+            <param name="left">The first object to compare.</param>
+            <param name="right">The second object to compare.</param>
+            <returns>true if left is earlier than right; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.op_LessThanOrEqual(System.TimeOnly,System.TimeOnly)">
+            <summary>
+            Determines whether one specified TimeOnly represents a time that is the same as or earlier than another specified TimeOnly.
+            </summary>
+            <param name="left">The first object to compare.</param>
+            <param name="right">The second object to compare.</param>
+            <returns>true if left is the same as or earlier than right; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.op_Subtraction(System.TimeOnly,System.TimeOnly)">
+            <summary>
+             Gives the elapsed time between two points on a circular clock, which will always be a positive value.
+            </summary>
+            <param name="t1">The first TimeOnly instance.</param>
+            <param name="t2">The second TimeOnly instance..</param>
+            <returns>The elapsed time between t1 and t2.</returns>
+        </member>
+        <member name="M:System.TimeOnly.Deconstruct(System.Int32@,System.Int32@)">
+            <summary>
+            Deconstructs <see cref="T:System.TimeOnly"/> by <see cref="P:System.TimeOnly.Hour"/> and <see cref="P:System.TimeOnly.Minute"/>.
+            </summary>
+            <param name="hour">
+            Deconstructed parameter for <see cref="P:System.TimeOnly.Hour"/>.
+            </param>
+            <param name="minute">
+            Deconstructed parameter for <see cref="P:System.TimeOnly.Minute"/>.
+            </param>
+        </member>
+        <member name="M:System.TimeOnly.Deconstruct(System.Int32@,System.Int32@,System.Int32@)">
+            <summary>
+            Deconstructs <see cref="T:System.TimeOnly"/> by <see cref="P:System.TimeOnly.Hour"/>, <see cref="P:System.TimeOnly.Minute"/> and <see cref="P:System.TimeOnly.Second"/>.
+            </summary>
+            <param name="hour">
+            Deconstructed parameter for <see cref="P:System.TimeOnly.Hour"/>.
+            </param>
+            <param name="minute">
+            Deconstructed parameter for <see cref="P:System.TimeOnly.Minute"/>.
+            </param>
+            <param name="second">
+            Deconstructed parameter for <see cref="P:System.TimeOnly.Second"/>.
+            </param>
+        </member>
+        <member name="M:System.TimeOnly.Deconstruct(System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+            <summary>
+            Deconstructs <see cref="T:System.TimeOnly"/> by <see cref="P:System.TimeOnly.Hour"/>, <see cref="P:System.TimeOnly.Minute"/>, <see cref="P:System.TimeOnly.Second"/> and <see cref="P:System.TimeOnly.Millisecond"/>.
+            </summary>
+            <param name="hour">
+            Deconstructed parameter for <see cref="P:System.TimeOnly.Hour"/>.
+            </param>
+            <param name="minute">
+            Deconstructed parameter for <see cref="P:System.TimeOnly.Minute"/>.
+            </param>
+            <param name="second">
+            Deconstructed parameter for <see cref="P:System.TimeOnly.Second"/>.
+            </param>
+            <param name="millisecond">
+            Deconstructed parameter for <see cref="P:System.TimeOnly.Millisecond"/>.
+            </param>
+        </member>
+        <member name="M:System.TimeOnly.Deconstruct(System.Int32@,System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+            <summary>
+            Deconstructs <see cref="T:System.TimeOnly"/> by <see cref="P:System.TimeOnly.Hour"/>, <see cref="P:System.TimeOnly.Minute"/>, <see cref="P:System.TimeOnly.Second"/>, <see cref="P:System.TimeOnly.Millisecond"/> and <see cref="P:System.TimeOnly.Microsecond"/>.
+            </summary>
+            <param name="hour">
+            Deconstructed parameter for <see cref="P:System.TimeOnly.Hour"/>.
+            </param>
+            <param name="minute">
+            Deconstructed parameter for <see cref="P:System.TimeOnly.Minute"/>.
+            </param>
+            <param name="second">
+            Deconstructed parameter for <see cref="P:System.TimeOnly.Second"/>.
+            </param>
+            <param name="millisecond">
+            Deconstructed parameter for <see cref="P:System.TimeOnly.Millisecond"/>.
+            </param>
+            <param name="microsecond">
+            Deconstructed parameter for <see cref="P:System.TimeOnly.Microsecond"/>.
+            </param>
+        </member>
+        <member name="M:System.TimeOnly.FromTimeSpan(System.TimeSpan)">
+            <summary>
+            Constructs a TimeOnly object from a TimeSpan representing the time elapsed since midnight.
+            </summary>
+            <param name="timeSpan">The time interval measured since midnight. This value has to be positive and not exceeding the time of the day.</param>
+            <returns>A TimeOnly object representing the time elapsed since midnight using the timeSpan value.</returns>
+        </member>
+        <member name="M:System.TimeOnly.FromDateTime(System.DateTime)">
+            <summary>
+            Constructs a TimeOnly object from a DateTime representing the time of the day in this DateTime object.
+            </summary>
+            <param name="dateTime">The time DateTime object to extract the time of the day from.</param>
+            <returns>A TimeOnly object representing time of the day specified in the DateTime object.</returns>
+        </member>
+        <member name="M:System.TimeOnly.ToTimeSpan">
+            <summary>
+            Convert the current TimeOnly instance to a TimeSpan object.
+            </summary>
+            <returns>A TimeSpan object spanning to the time specified in the current TimeOnly object.</returns>
+        </member>
+        <member name="M:System.TimeOnly.CompareTo(System.TimeOnly)">
+            <summary>
+            Compares the value of this instance to a specified TimeOnly value and indicates whether this instance is earlier than, the same as, or later than the specified TimeOnly value.
+            </summary>
+            <param name="value">The object to compare to the current instance.</param>
+            <returns>
+            A signed number indicating the relative values of this instance and the value parameter.
+            Less than zero if this instance is earlier than value.
+            Zero if this instance is the same as value.
+            Greater than zero if this instance is later than value.
+            </returns>
+        </member>
+        <member name="M:System.TimeOnly.CompareTo(System.Object)">
+            <summary>
+            Compares the value of this instance to a specified object that contains a specified TimeOnly value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified TimeOnly value.
+            </summary>
+            <param name="value">A boxed object to compare, or null.</param>
+            <returns>
+            A signed number indicating the relative values of this instance and the value parameter.
+            Less than zero if this instance is earlier than value.
+            Zero if this instance is the same as value.
+            Greater than zero if this instance is later than value.
+            </returns>
+        </member>
+        <member name="M:System.TimeOnly.Equals(System.TimeOnly)">
+            <summary>
+            Returns a value indicating whether the value of this instance is equal to the value of the specified TimeOnly instance.
+            </summary>
+            <param name="value">The object to compare to this instance.</param>
+            <returns>true if the value parameter equals the value of this instance; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance is equal to a specified object.
+            </summary>
+            <param name="value">The object to compare to this instance.</param>
+            <returns>true if value is an instance of TimeOnly and equals the value of this instance; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
+        <member name="M:System.TimeOnly.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts a memory span that contains string representation of a time to its TimeOnly equivalent by using culture-specific format information and a formatting style.
+            </summary>
+            <param name="s">The memory span that contains the string to parse.</param>
+            <param name="provider">An object that supplies culture-specific format information about s.</param>
+            <param name="style">A bitwise combination of enumeration values that indicates the permitted format of s. A typical value to specify is None.</param>
+            <returns>An object that is equivalent to the time contained in s, as specified by provider and styles.</returns>
+            <inheritdoc cref="M:System.ISpanParsable`1.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)" />
+        </member>
+        <member name="M:System.TimeOnly.ParseExact(System.ReadOnlySpan{System.Char},System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts the specified span representation of a time to its TimeOnly equivalent using the specified format, culture-specific format information, and style.
+            The format of the string representation must match the specified format exactly or an exception is thrown.
+            </summary>
+            <param name="s">A span containing the characters that represent a time to convert.</param>
+            <param name="format">A span containing the characters that represent a format specifier that defines the required format of s.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of enumeration values that indicates the permitted format of s. A typical value to specify is None.</param>
+            <returns>An object that is equivalent to the time contained in s, as specified by format, provider, and style.</returns>
+        </member>
+        <member name="M:System.TimeOnly.ParseExact(System.ReadOnlySpan{System.Char},System.String[])">
+            <summary>
+            Converts the specified span representation of a time to its TimeOnly equivalent using the specified array of formats.
+            The format of the string representation must match at least one of the specified formats exactly or an exception is thrown.
+            </summary>
+            <param name="s">A span containing the characters that represent a time to convert.</param>
+            <param name="formats">An array of allowable formats of s.</param>
+            <returns>An object that is equivalent to the time contained in s, as specified by format, provider, and style.</returns>
+        </member>
+        <member name="M:System.TimeOnly.ParseExact(System.ReadOnlySpan{System.Char},System.String[],System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts the specified span representation of a time to its TimeOnly equivalent using the specified array of formats, culture-specific format information, and style.
+            The format of the string representation must match at least one of the specified formats exactly or an exception is thrown.
+            </summary>
+            <param name="s">A span containing the characters that represent a time to convert.</param>
+            <param name="formats">An array of allowable formats of s.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of enumeration values that indicates the permitted format of s. A typical value to specify is None.</param>
+            <returns>An object that is equivalent to the time contained in s, as specified by format, provider, and style.</returns>
+        </member>
+        <member name="M:System.TimeOnly.Parse(System.String)">
+            <summary>
+            Converts a string that contains string representation of a time to its TimeOnly equivalent by using the conventions of the current culture.
+            </summary>
+            <param name="s">The string that contains the string to parse.</param>
+            <returns>An object that is equivalent to the time contained in s.</returns>
+        </member>
+        <member name="M:System.TimeOnly.Parse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts a string that contains string representation of a time to its TimeOnly equivalent by using culture-specific format information and a formatting style.
+            </summary>
+            <param name="s">The string that contains the string to parse.</param>
+            <param name="provider">An object that supplies culture-specific format information about s.</param>
+            <param name="style">A bitwise combination of the enumeration values that indicates the style elements that can be present in s for the parse operation to succeed, and that defines how to interpret the parsed date. A typical value to specify is None.</param>
+            <returns>An object that is equivalent to the time contained in s, as specified by provider and styles.</returns>
+        </member>
+        <member name="M:System.TimeOnly.ParseExact(System.String,System.String)">
+            <summary>
+            Converts the specified string representation of a time to its TimeOnly equivalent using the specified format.
+            The format of the string representation must match the specified format exactly or an exception is thrown.
+            </summary>
+            <param name="s">A string containing the characters that represent a time to convert.</param>
+            <param name="format">A string that represent a format specifier that defines the required format of s.</param>
+            <returns>An object that is equivalent to the time contained in s, as specified by format.</returns>
+        </member>
+        <member name="M:System.TimeOnly.ParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts the specified string representation of a time to its TimeOnly equivalent using the specified format, culture-specific format information, and style.
+            The format of the string representation must match the specified format exactly or an exception is thrown.
+            </summary>
+            <param name="s">A string containing the characters that represent a time to convert.</param>
+            <param name="format">A string containing the characters that represent a format specifier that defines the required format of s.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of the enumeration values that provides additional information about s, about style elements that may be present in s, or about the conversion from s to a TimeOnly value. A typical value to specify is None.</param>
+            <returns>An object that is equivalent to the time contained in s, as specified by format, provider, and style.</returns>
+        </member>
+        <member name="M:System.TimeOnly.ParseExact(System.String,System.String[])">
+            <summary>
+            Converts the specified span representation of a time to its TimeOnly equivalent using the specified array of formats.
+            The format of the string representation must match at least one of the specified formats exactly or an exception is thrown.
+            </summary>
+            <param name="s">A span containing the characters that represent a time to convert.</param>
+            <param name="formats">An array of allowable formats of s.</param>
+            <returns>An object that is equivalent to the time contained in s, as specified by format, provider, and style.</returns>
+        </member>
+        <member name="M:System.TimeOnly.ParseExact(System.String,System.String[],System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts the specified string representation of a time to its TimeOnly equivalent using the specified array of formats, culture-specific format information, and style.
+            The format of the string representation must match at least one of the specified formats exactly or an exception is thrown.
+            </summary>
+            <param name="s">A string containing the characters that represent a time to convert.</param>
+            <param name="formats">An array of allowable formats of s.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of enumeration values that indicates the permitted format of s. A typical value to specify is None.</param>
+            <returns>An object that is equivalent to the time contained in s, as specified by format, provider, and style.</returns>
+        </member>
+        <member name="M:System.TimeOnly.TryParse(System.ReadOnlySpan{System.Char},System.TimeOnly@)">
+            <summary>
+            Converts the specified span representation of a time to its TimeOnly equivalent and returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">A span containing the characters representing the time to convert.</param>
+            <param name="result">When this method returns, contains the TimeOnly value equivalent to the time contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s parameter is empty string, or does not contain a valid string representation of a time. This parameter is passed uninitialized.</param>
+            <returns>true if the s parameter was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,System.TimeOnly@)">
+            <summary>
+            Converts the specified span representation of a time to its TimeOnly equivalent using the specified array of formats, culture-specific format information, and style. And returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">A string containing the characters that represent a time to convert.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of enumeration values that indicates the permitted format of s. A typical value to specify is None.</param>
+            <param name="result">When this method returns, contains the TimeOnly value equivalent to the time contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s parameter is empty string, or does not contain a valid string representation of a date. This parameter is passed uninitialized.</param>
+            <returns>true if the s parameter was converted successfully; otherwise, false.</returns>
+            <inheritdoc cref="M:System.ISpanParsable`1.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,`0@)" />
+        </member>
+        <member name="M:System.TimeOnly.TryParseExact(System.ReadOnlySpan{System.Char},System.ReadOnlySpan{System.Char},System.TimeOnly@)">
+            <summary>
+            Converts the specified span representation of a time to its TimeOnly equivalent using the specified format and style.
+            The format of the string representation must match the specified format exactly. The method returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">A span containing the characters representing a time to convert.</param>
+            <param name="format">The required format of s.</param>
+            <param name="result">When this method returns, contains the TimeOnly value equivalent to the time contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s is empty string, or does not contain a time that correspond to the pattern specified in format. This parameter is passed uninitialized.</param>
+            <returns>true if s was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.TryParseExact(System.ReadOnlySpan{System.Char},System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,System.TimeOnly@)">
+            <summary>
+            Converts the specified span representation of a time to its TimeOnly equivalent using the specified format, culture-specific format information, and style.
+            The format of the string representation must match the specified format exactly. The method returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">A span containing the characters representing a time to convert.</param>
+            <param name="format">The required format of s.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of one or more enumeration values that indicate the permitted format of s.</param>
+            <param name="result">When this method returns, contains the TimeOnly value equivalent to the time contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s is empty string, or does not contain a time that correspond to the pattern specified in format. This parameter is passed uninitialized.</param>
+            <returns>true if s was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.TryParseExact(System.ReadOnlySpan{System.Char},System.String[],System.TimeOnly@)">
+            <summary>
+            Converts the specified char span of a time to its TimeOnly equivalent and returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">The span containing the string to parse.</param>
+            <param name="formats">An array of allowable formats of s.</param>
+            <param name="result">When this method returns, contains the TimeOnly value equivalent to the time contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s parameter is Empty, or does not contain a valid string representation of a time. This parameter is passed uninitialized.</param>
+            <returns>true if the s parameter was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.TryParseExact(System.ReadOnlySpan{System.Char},System.String[],System.IFormatProvider,System.Globalization.DateTimeStyles,System.TimeOnly@)">
+            <summary>
+            Converts the specified char span of a time to its TimeOnly equivalent and returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">The span containing the string to parse.</param>
+            <param name="formats">An array of allowable formats of s.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of enumeration values that defines how to interpret the parsed time. A typical value to specify is None.</param>
+            <param name="result">When this method returns, contains the TimeOnly value equivalent to the time contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s parameter is Empty, or does not contain a valid string representation of a time. This parameter is passed uninitialized.</param>
+            <returns>true if the s parameter was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.TryParse(System.String,System.TimeOnly@)">
+            <summary>
+            Converts the specified string representation of a time to its TimeOnly equivalent and returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">A string containing the characters representing the time to convert.</param>
+            <param name="result">When this method returns, contains the TimeOnly value equivalent to the time contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s parameter is empty string, or does not contain a valid string representation of a time. This parameter is passed uninitialized.</param>
+            <returns>true if the s parameter was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.TryParse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.TimeOnly@)">
+            <summary>
+            Converts the specified string representation of a time to its TimeOnly equivalent using the specified array of formats, culture-specific format information, and style. And returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">A string containing the characters that represent a time to convert.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of enumeration values that indicates the permitted format of s. A typical value to specify is None.</param>
+            <param name="result">When this method returns, contains the TimeOnly value equivalent to the time contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s parameter is empty string, or does not contain a valid string representation of a time. This parameter is passed uninitialized.</param>
+            <returns>true if the s parameter was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.TryParseExact(System.String,System.String,System.TimeOnly@)">
+            <summary>
+            Converts the specified string representation of a time to its TimeOnly equivalent using the specified format and style.
+            The format of the string representation must match the specified format exactly. The method returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">A string containing the characters representing a time to convert.</param>
+            <param name="format">The required format of s.</param>
+            <param name="result">When this method returns, contains the TimeOnly value equivalent to the time contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s is empty string, or does not contain a time that correspond to the pattern specified in format. This parameter is passed uninitialized.</param>
+            <returns>true if s was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.TimeOnly@)">
+            <summary>
+            Converts the specified span representation of a time to its TimeOnly equivalent using the specified format, culture-specific format information, and style.
+            The format of the string representation must match the specified format exactly. The method returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">A span containing the characters representing a time to convert.</param>
+            <param name="format">The required format of s.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of one or more enumeration values that indicate the permitted format of s.</param>
+            <param name="result">When this method returns, contains the TimeOnly value equivalent to the time contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s is empty string, or does not contain a time that correspond to the pattern specified in format. This parameter is passed uninitialized.</param>
+            <returns>true if s was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.TryParseExact(System.String,System.String[],System.TimeOnly@)">
+            <summary>
+            Converts the specified string of a time to its TimeOnly equivalent and returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">The string containing time to parse.</param>
+            <param name="formats">An array of allowable formats of s.</param>
+            <param name="result">When this method returns, contains the timeOnly value equivalent to the time contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s parameter is Empty, or does not contain a valid string representation of a time. This parameter is passed uninitialized.</param>
+            <returns>true if the s parameter was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.TryParseExact(System.String,System.String[],System.IFormatProvider,System.Globalization.DateTimeStyles,System.TimeOnly@)">
+            <summary>
+            Converts the specified string of a time to its TimeOnly equivalent and returns a value that indicates whether the conversion succeeded.
+            </summary>
+            <param name="s">The string containing the time to parse.</param>
+            <param name="formats">An array of allowable formats of s.</param>
+            <param name="provider">An object that supplies culture-specific formatting information about s.</param>
+            <param name="style">A bitwise combination of enumeration values that defines how to interpret the parsed date. A typical value to specify is None.</param>
+            <param name="result">When this method returns, contains the TimeOnly value equivalent to the time contained in s, if the conversion succeeded, or MinValue if the conversion failed. The conversion fails if the s parameter is Empty, or does not contain a valid string representation of a time. This parameter is passed uninitialized.</param>
+            <returns>true if the s parameter was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:System.TimeOnly.ToLongTimeString">
+            <summary>
+            Converts the value of the current TimeOnly object to its equivalent long date string representation.
+            </summary>
+            <returns>A string that contains the long time string representation of the current TimeOnly object.</returns>
+        </member>
+        <member name="M:System.TimeOnly.ToShortTimeString">
+            <summary>
+            Converts the value of the current TimeOnly object to its equivalent short time string representation.
+            </summary>
+            <returns>A string that contains the short time string representation of the current TimeOnly object.</returns>
+        </member>
+        <member name="M:System.TimeOnly.ToString">
+            <summary>
+            Converts the value of the current TimeOnly object to its equivalent string representation using the formatting conventions of the current culture.
+            The TimeOnly object will be formatted in short form.
+            </summary>
+            <returns>A string that contains the short time string representation of the current TimeOnly object.</returns>
+        </member>
+        <member name="M:System.TimeOnly.ToString(System.String)">
+            <summary>
+            Converts the value of the current TimeOnly object to its equivalent string representation using the specified format and the formatting conventions of the current culture.
+            </summary>
+            <param name="format">A standard or custom time format string.</param>
+            <returns>A string representation of value of the current TimeOnly object as specified by format.</returns>
+            <remarks>The accepted standard formats are 'r', 'R', 'o', 'O', 't' and 'T'. </remarks>
+        </member>
+        <member name="M:System.TimeOnly.ToString(System.IFormatProvider)">
+            <summary>
+            Converts the value of the current TimeOnly object to its equivalent string representation using the specified culture-specific format information.
+            </summary>
+            <param name="provider">An object that supplies culture-specific formatting information.</param>
+            <returns>A string representation of value of the current TimeOnly object as specified by provider.</returns>
+        </member>
+        <member name="M:System.TimeOnly.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts the value of the current TimeOnly object to its equivalent string representation using the specified culture-specific format information.
+            </summary>
+            <param name="format">A standard or custom time format string.</param>
+            <param name="provider">An object that supplies culture-specific formatting information.</param>
+            <returns>A string representation of value of the current TimeOnly object as specified by format and provider.</returns>
+            <remarks>The accepted standard formats are 'r', 'R', 'o', 'O', 't' and 'T'. </remarks>
+        </member>
+        <member name="M:System.TimeOnly.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <summary>
+            Tries to format the value of the current TimeOnly instance into the provided span of characters.
+            </summary>
+            <param name="destination">When this method returns, this instance's value formatted as a span of characters.</param>
+            <param name="charsWritten">When this method returns, the number of characters that were written in destination.</param>
+            <param name="format">A span containing the characters that represent a standard or custom format string that defines the acceptable format for destination.</param>
+            <param name="provider">An optional object that supplies culture-specific formatting information for destination.</param>
+            <returns>true if the formatting was successful; otherwise, false.</returns>
+            <remarks>The accepted standard formats are 'r', 'R', 'o', 'O', 't' and 'T'. </remarks>
+        </member>
+        <member name="M:System.TimeOnly.Parse(System.String,System.IFormatProvider)">
+            <inheritdoc cref="M:System.IParsable`1.Parse(System.String,System.IFormatProvider)" />
+        </member>
+        <member name="M:System.TimeOnly.TryParse(System.String,System.IFormatProvider,System.TimeOnly@)">
+            <inheritdoc cref="M:System.IParsable`1.TryParse(System.String,System.IFormatProvider,`0@)" />
+        </member>
+        <member name="M:System.TimeOnly.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref="M:System.ISpanParsable`1.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)" />
+        </member>
+        <member name="M:System.TimeOnly.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.TimeOnly@)">
+            <inheritdoc cref="M:System.ISpanParsable`1.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,`0@)" />
+        </member>
+    </members>
+</doc>
