@@ -23,42 +23,42 @@
 
 
     <Grid>
-        <Border Background="#39c406"
-                CornerRadius="20"/>
+        <Border Background="#39c406" CornerRadius="20"/>
         <Grid>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="230"/>
                     <ColumnDefinition Width="620"/>
                 </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="530"/>
+                </Grid.RowDefinitions>
             </Grid>
 
-            <Grid HorizontalAlignment="Left" 
-              Width="230">
+            <Grid Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Left" Width="230">
 
-                <StackPanel Height="400" Width="230">
+                <StackPanel Height="400" Width="230" Grid.Column="1">
                     <Menu:Btn Style="{StaticResource BtnStyle}"
                           Command="{Binding HomeCommand}"
                           IsChecked="True" 
                          >
                         <Grid>
-                            <Image Source="Images/img_home.png"
-                               Style="{StaticResource Image_Style}"/>
-                            <TextBlock Text="HOME"
-                                   Style="{StaticResource Text_Style}"/>
+                            <Image Source="Images/img_home.png" Style="{StaticResource Image_Style}"/>
+                            <TextBlock Text="HOME" Style="{StaticResource Text_Style}"/>
                         </Grid>
                     </Menu:Btn>
                 </StackPanel>
             </Grid>
 
-            <Grid Grid.Column="1">
-                <ContentControl x:Name="Pages" Content="{ Binding CurrentView }"/>
-            </Grid>
+            <ContentControl Grid.Row="1" Grid.Column="1"
+                            x:Name="Pages" 
+                            Content="{ Binding CurrentView }"
+            />
         </Grid>
 
-    
-    <Button x:Name="CloseApp"
-                Style="{StaticResource ExitApp}" Click="CloseApp_Click"
-                />
+
+        <Button x:Name="CloseApp" Style="{StaticResource ExitApp}" Click="CloseApp_Click" />
     </Grid>
 </Window>
